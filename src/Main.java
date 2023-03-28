@@ -9,7 +9,8 @@ public class Main {
         people.add(new Person("Мария", "Карпова", 34));
         people.add(new Person("Василиса", "Иванво иль dsa dsa ds", 43));
         System.out.println(people);
-        Collections.sort(people, new PersonComparator());
+        people.sort(((o1, o2) ->
+                o2.getSurname().split("[- ]").length - o1.getSurname().split("[- ]").length == 0 ? o2.getAge() - o1.getAge() : o2.getSurname().split("[- ]").length - o1.getSurname().split("[- ]").length));
         System.out.println(people);
     }
 }
